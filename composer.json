@@ -1,0 +1,25 @@
+{
+  "name": "uams-web/patches-patchwork",
+  "description": "Patches UAMS-Web repositories apply to antecedent/patchwork",
+  "type": "library",
+  "require": {
+    "antecedent/patchwork": "2.2.4"
+  },
+  "extra": {
+    "patches": {
+      "antecedent/patchwork": {
+        "Retain delegated directory wrappers (temporary; see UAMS-Web/UAMSWP-Logo-List#82)": "vendor/uams-web/patches-patchwork/patches/patchwork-directory-wrapper.patch"
+      }
+    }
+  },
+  "keywords": [
+    "composer",
+    "patches",
+    "patchwork"
+  ],
+  "support": {
+    "issues": "https://github.com/UAMS-Web/patches-patchwork/issues",
+    "source": "https://github.com/UAMS-Web/patches-patchwork"
+  },
+  "license": "MIT"
+}
