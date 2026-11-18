@@ -1,0 +1,21 @@
+Written against v1.0.0.
+
+This page is for changing the package itself. The detailed procedure is the `patch-package` skill, delivered to this repository under `.claude/skills/patch-package/`; this page keeps the rules a change has to respect.
+
+## Adding a patch
+
+1. Cut the patch against the exact upstream pin (`antecedent/patchwork` `2.2.4`) so that `git apply -p1` accepts it.
+2. Register it under `extra.patches` in `composer.json` with a description. The description names the ticket that tracks the upstream fix, where there is one.
+3. **Place it in the order it was cut for.** Patches apply in the order listed, and a later patch is cut against the output of the earlier ones.
+4. Add its row to the list in the README and to [Patches](Patches.md).
+5. If a ticket in this repository waits on an upstream issue or pull request, add an upstream watch row in the same pull request (see below).
+
+## Retiring a patch
+
+A patch retires once a fixed upstream release ships. Remove its file, its `composer.json` entry and its watch row, and close the tracking issue. Removing a patch is a minor release; see [Versioning](Versioning.md).
+
+## The upstream watch
+
+The `watch-upstream` workflow reads one JSON file per upstream issue or pull request in `.github/upstream-watches/` once a day, and comments on the row's tracking issue when something moves. A directory with no rows is valid, and the run then does nothing. The row format is in `.github/upstream-watches/README.md`.
+
+Reference: [Patches](Patches.md), [Versioning](Versioning.md).
