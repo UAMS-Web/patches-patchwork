@@ -32,6 +32,8 @@ Applied in this order, which is the order in `composer.json`. A later patch is c
 
 Each description names the ticket that tracks the upstream fix, where there is one.
 
+The [wiki](https://github.com/UAMS-Web/patches-patchwork/wiki) documents each patch, using the package and changing it.
+
 ## Versioning
 
 | Change | Release |
