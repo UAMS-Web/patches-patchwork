@@ -29,6 +29,7 @@ Patch paths are relative to the consumer's root and start `vendor/uams-web/patch
 Applied in this order, which is the order in `composer.json`. A later patch is cut against the output of the earlier ones, so none is reordered without re-cutting those after it.
 
 - **`patchwork-directory-wrapper.patch`**: Retain delegated directory wrappers (temporary; see UAMS-Web/UAMSWP-Logo-List#82)
+- **`patchwork-internal-callback-line-numbers.patch`**: Keep the line breaks Patchwork removes from callback-taking internal calls so coverage lands on the right lines (temporary; see antecedent/patchwork#230)
 
 Each description names the ticket that tracks the upstream fix, where there is one.
 
@@ -44,7 +45,7 @@ The [wiki](https://github.com/UAMS-Web/patches-patchwork/wiki) documents each pa
 
 ## Verifying the set
 
-Apply the 1 patch in order to the `2.2.4` tag of `antecedent/patchwork` with `git apply -p1`. Applying the first patch a second time must fail.
+Apply the 2 patches in order to the `2.2.4` tag of `antecedent/patchwork` with `git apply -p1`. Applying either patch a second time must fail.
 
 ## License
 
