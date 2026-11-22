@@ -8,7 +8,8 @@
   "extra": {
     "patches": {
       "antecedent/patchwork": {
-        "Retain delegated directory wrappers (temporary; see UAMS-Web/UAMSWP-Logo-List#82)": "vendor/uams-web/patches-patchwork/patches/patchwork-directory-wrapper.patch"
+        "Retain delegated directory wrappers (temporary; see UAMS-Web/UAMSWP-Logo-List#82)": "vendor/uams-web/patches-patchwork/patches/patchwork-directory-wrapper.patch",
+        "Keep the line breaks Patchwork removes from callback-taking internal calls so coverage lands on the right lines (temporary; see antecedent/patchwork#230)": "vendor/uams-web/patches-patchwork/patches/patchwork-internal-callback-line-numbers.patch"
       }
     }
   },
