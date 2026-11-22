@@ -36,4 +36,12 @@ Unknown keys, a missing key and a wrong type fail the run with the file named, s
 
 ## Notes on current rows
 
-No rows yet. No open ticket in this repository waits on an upstream thread; `UAMS-Web/patches-patchwork#2` and `UAMS-Web/patches-patchwork#3` each add a row, tracked by that ticket, when the upstream issue or pull request is filed.
+Three rows, each under the removal ticket that waits on the thread:
+
+| Row | Tracker | Watches | Why it earns its place |
+| --- | --- | --- | --- |
+| `1-antecedent-patchwork-234.json` | `1` | `antecedent/patchwork#234` (issue) | The report that the stream wrapper's directory open drops the delegated wrapper; the removal ticket for `patches/patchwork-directory-wrapper.patch` is blocked by it. |
+| `1-antecedent-patchwork-235.json` | `1` | `antecedent/patchwork#235` (pull request, `released: true`) | The upstream fix for #234. Merging is not releasing, so `released: true` also reports the first release on its base-branch line that contains the merge. |
+| `16-antecedent-patchwork-230.json` | `16` | `antecedent/patchwork#230` (issue) | The report that Patchwork shortens a file when it reroutes a callback-taking internal; the removal ticket for `patches/patchwork-internal-callback-line-numbers.patch` is blocked by it. |
+
+No row carries `composer`: the pin in `composer.lock` is already behind a published release, so the Packagist signal would report at once and say nothing about the fix. The upstream pull request for `antecedent/patchwork#230` is `antecedent/patchwork#233`; it has no row because tracker `16` already receives that thread's reports and a second row under one tracker shares its off switch.
